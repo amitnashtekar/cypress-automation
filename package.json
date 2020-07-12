@@ -1,0 +1,23 @@
+{
+  "name": "amit-cypress-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cy:run": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amitnashtekar/cypress-automation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amitnashtekar/cypress-automation/issues"
+  },
+  "homepage": "https://github.com/amitnashtekar/cypress-automation#readme",
+  "devDependencies": {
+    "cypress": "^4.10.0"
+  }
+}
