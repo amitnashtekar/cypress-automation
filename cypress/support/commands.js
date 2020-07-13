@@ -29,3 +29,17 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     // failing the test
     return false
   })
+
+Cypress.Commands.add('selectForCompare', (tileHeading) => {
+    cy.get('.MobileDevicestyle__Title-sc-13i2889-6').each((comparLink, index) => {
+                     
+        if (comparLink.text() === tileHeading) {
+            cy.log(comparLink.text())
+            cy.get('.MobileDevicestyle__CompareBtn-sc-13i2889-10.iTQbAr').eq(index).click()
+        }
+
+    })
+})
+
+
+

@@ -19,5 +19,9 @@
   "homepage": "https://github.com/amitnashtekar/cypress-automation#readme",
   "devDependencies": {
     "cypress": "^4.10.0"
+  },
+  "dependencies": {
+    "axe-core": "^3.5.5",
+    "cypress-axe": "^0.8.1"
   }
 }

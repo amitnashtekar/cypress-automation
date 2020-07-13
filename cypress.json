@@ -1,4 +1,5 @@
 {
     "viewportHeight": 530,
-"viewportWidth": 1280
+"viewportWidth": 1280,
+"defaultCommandTimeout": 10000
 }
