@@ -48,6 +48,7 @@ describe("visit device details page", function () {
            .contains("Optus Roaming Pass").invoke('removeAttr', 'target').click()          
             
         })
+        //check browser navigations
         it("check correct Tab opened and go back to device details page again", () => {
            
             // cy.location().should((loc) => {
