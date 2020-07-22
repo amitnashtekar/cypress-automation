@@ -1,6 +1,7 @@
 /// <reference types="Cypress" />
 import deviceDetail from '../../../support/device-plan-selection/device-plan-selection.class';
 
+//object design pattern
 const deviceDetailPage = new deviceDetail()
 
 describe("device, plan selection and continue to customer intent", function () {
