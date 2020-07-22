@@ -1,5 +1,8 @@
 {
     "viewportHeight": 530,
-"viewportWidth": 1280,
-"defaultCommandTimeout": 10000
+    "viewportWidth": 1280,
+    "defaultCommandTimeout": 15000,
+    "env": {
+        "sq_page_url": "https://www.optus.com.au/broadband-nbn/home-broadband/plans/shop"
+    }
 }
