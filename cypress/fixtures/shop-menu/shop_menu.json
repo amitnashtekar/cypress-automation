@@ -1,21 +1,21 @@
 {
-    "Mobile":{       
-        "0": "Latest Phones",
-        "1": "SIM Plans",
-        "2": "iPads & Tablets",
-        "3": "Smart Watches"
-    },
-    "Prepaid": {
-        "0": "Starter Kits",
-        "1": "Plans & Recharge",
-        "2": "Prepaid Phones",
-        "3": "Mobile Broadband"
-    },
-    "Broadband & NBN": {
-        "0": "Broadband & NBN",
-        "1": "5G Home",
-        "2": "4G Modems",
-        "3": "Data SIMs",
-        "4": "Home Phone"
-    }
+  "Mobile": {
+    "0": "Latest Phones",
+    "1": "SIM Plans",
+    "2": "iPads & Tablets",
+    "3": "Smart Watches"
+  },
+  "Prepaid": {
+    "0": "Starter Kits",
+    "1": "Plans & Recharge",
+    "2": "Prepaid Phones",
+    "3": "Mobile Broadband"
+  },
+  "Broadband & NBN": {
+    "0": "Broadband & NBN",
+    "1": "5G Home",
+    "2": "4G Modems",
+    "3": "Data SIMs",
+    "4": "Home Phone"
+  }
 }

@@ -1,68 +1,46 @@
 /// <reference types="Cypress" />
 
+//NO NEED TO COVER. ALMOST ALL IS COVERED.
 describe("visit device details page", function () {
-    //it will run only once.
-    //here we filterted samsung which will be applicable to all test cases
-    before(() => {
-        cy.visit("https://www.optus.com.au/mobile/phones/samsung/gs20-ultra-5g?contractLength=36")
-    })
+  //it will run only once.
+  //here we filterted samsung which will be applicable to all test cases
+  before(() => {
+    cy.visit(
+      "https://www.optus.com.au/mobile/phones/samsung/gs20-5g?contractLength=36"
+    );
+    cy.get(
+      'div[data-component="PlanListing"] .swiper-container .swiper-slide'
+    ).as("planTiles");
+    this.storedPLans = cy.get("@planTiles"); //here $Chainer promise will be get
+    //stored instead of element
+    cy.log("@planTiles");
+    cy.log(this.storedPLans); // here we can see that promise. SO can use like this
+  });
 
-    describe("check correct device is selected('Samsung Galaxy S20 Ultra 5G')",() => {
+  describe("'Optus Roaming Pass' link is working", () => {
+    //need to open anchor in same tab
+    // anchor click Tab opening and browser back, forward navigation
+    it("accordion of 'TALK & TEXT' should work and new tab should open", () => {
+      cy.get("@planTiles").eq(1).contains("TALK & TEXT").click();
 
-        it("page has Samsung Galaxy S20 Ultra 5G' as heading", () => {
-            // cy.log(cy.get('.ProductText__Title-sc-1wwj11g-0.jxyuLE')
-            // .first().text())
-            cy.get('.ProductText__Title-sc-1wwj11g-0.jxyuLE')
-            .first().contains('Samsung Galaxy S20 Ultra 5G')
-            
-        })
+      cy.get("@planTiles")
+        .eq(1)
+        .contains("Optus Roaming Pass")
+        .invoke("removeAttr", "target") //here we removed the target
+        .click();
+    });
+    //check browser navigations
+    it("check correct Tab opened and go back to device details page again", () => {
+      // cy.location().should((loc) => {
 
-        // toggeling button and check actually visible element
-        it("by chosing 'gray 'color , only 'gray' color phone should visible", () => {
-            cy.get('.fGDVis').click()
-            cy.get('img[src="/content/dam/optus/images/shop/mobile/phones/samsung/samsung-galaxy-s20-ultra/carousel/samsung-gs20-ultra-grey-front-and-back.jpg/renditions/version-1583386661416/492.jpeg"]')
-            .should('be.visible')
-            cy.get('img[src="/content/dam/optus/images/shop/mobile/phones/samsung/samsung-galaxy-s20-ultra/carousel/samsung-gs20-ultra-black-front-and-back.jpg/renditions/version-1581571684538/492.jpeg"]')
-            .should('not.be.visible')
-            
-        })
+      //     expect(loc.href).to.eq('https://www.optus.com.au/for-you/mobile/plans/international-roaming/optus-roaming-pass')
+      // })
 
-        it("by chosing 'black 'color , only 'black' color phone should visible", () => {
-           
-            cy.get('.bOyCWI').click()
-            cy.get('img[src="/content/dam/optus/images/shop/mobile/phones/samsung/samsung-galaxy-s20-ultra/carousel/samsung-gs20-ultra-black-front-and-back.jpg/renditions/version-1581571684538/492.jpeg"]')
-            .should('be.visible')
-            cy.get('img[src="/content/dam/optus/images/shop/mobile/phones/samsung/samsung-galaxy-s20-ultra/carousel/samsung-gs20-ultra-grey-front-and-back.jpg/renditions/version-1583386661416/492.jpeg"]')
-            .should('not.be.visible')
-            
-        })
-        // anchor click Tab opening and browser back, forward navigation
-        it("accordion of 'TALK & TEXT' should work and new tab should open", () => {
-           
-           cy.get('div.PlanCard__PlanCardWrapper-sc-189jzac-0.irokll:visible').as('planTile')
+      //OR
 
-           cy.get('@planTile')
-           .contains('TALK & TEXT').click()
-
-           cy.get('@planTile')
-           .contains("Optus Roaming Pass").invoke('removeAttr', 'target').click()          
-            
-        })
-        //check browser navigations
-        it("check correct Tab opened and go back to device details page again", () => {
-           
-            // cy.location().should((loc) => {
-                
-            //     expect(loc.href).to.eq('https://www.optus.com.au/for-you/mobile/plans/international-roaming/optus-roaming-pass')
-            // })
-
-            //OR
-
-            cy.url().should('include', 'international-roaming/optus-roaming-pass');
-            cy.go('back');
-             
-         })        
-
-    })
-
-})
+      cy.url().should("include", "international-roaming/optus-roaming-pass");
+      cy.pause();
+      cy.go("back");
+    });
+  });
+});
