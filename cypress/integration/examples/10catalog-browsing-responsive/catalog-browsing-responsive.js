@@ -10,6 +10,7 @@ function () {
     ).then((config) => {
       this.config = config;
     });
+    cy.viewport(375, 812)
     //   Cypress.config("viewportHeight", 812);
     //   Cypress.config("viewportWidth", 375);
   });
@@ -23,19 +24,20 @@ function () {
     // })
     //load the page
     it("load catalog browsing", function () {
-      cy.viewport(375, 812);
+      //cy.viewport(375, 812);
       cy.visit("https://www.optus.com.au/mobile/phones");
     });
 
     it("check for hamburger button", () => {
       cy.viewport(375, 812).then(() => {
-        cy.get('header[data-testid="header"] button').eq(0).contains("Search");
+        cy.get('header[data-testid="header"] button').eq(1).contains("Search");
       });
     });
     //they have removed the filter so test is failing
     it("check all filters are appearing", () => {
       cy.viewport(375, 812);
-      cy.get(".UxShopProductFilterstyle__Ul-sc-17ci9tm-0 li").each(
+      cy.get('div[data-component="DeviceListing"] .filter-text').click()
+      cy.get('div#lightbox li').each(
         (filter, ind) => {
           expect(filter.find("label").text()).equal(this.config[String(ind)]);
         }

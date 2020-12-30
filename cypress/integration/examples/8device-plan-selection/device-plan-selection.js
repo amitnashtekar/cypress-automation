@@ -8,7 +8,7 @@ const deviceDetailPage = new deviceDetail();
 
 describe("device, plan selection and continue to customer intent", function () {
   before(() => {
-    cy.visit("/mobile/phones/samsung/gs20-5g?contractLength=36");
+    cy.visit("/mobile/phones/samsung/galaxy-note20-ultra-5g?contractLength=36");
     cy.fixture("device-plan-selection/device-plan-selection.json").then(
       (config) => {
         this.config = config;

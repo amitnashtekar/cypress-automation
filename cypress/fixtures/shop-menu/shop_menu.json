@@ -3,7 +3,9 @@
     "0": "Latest Phones",
     "1": "SIM Plans",
     "2": "iPads & Tablets",
-    "3": "Smart Watches"
+    "3": "Smart Watches",
+    "4": "Student Hub",
+    "5": "Accessories"
   },
   "Prepaid": {
     "0": "Starter Kits",
@@ -11,10 +13,10 @@
     "2": "Prepaid Phones",
     "3": "Mobile Broadband"
   },
-  "Broadband & NBN": {
-    "0": "Broadband & NBN",
-    "1": "5G Home",
-    "2": "4G Modems",
+  "Home Internet & nbn": {
+    "0": "nbn Home Internet",
+    "1": "5G Home Internet",
+    "2": "4G Home Internet",
     "3": "Data SIMs",
     "4": "Home Phone"
   }

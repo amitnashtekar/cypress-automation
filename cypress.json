@@ -5,7 +5,7 @@
   "requestTimeout": 60000,
   "baseUrl": "https://www.optus.com.au",
   "env": {
-    "sq_page_url": "https://www.optus.com.au/broadband-nbn/home-broadband/plans/shop"
+    "sq_page_url": "/broadband-nbn/home-broadband/plans/shop"
   },
   "video": false
 }

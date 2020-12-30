@@ -15,6 +15,7 @@
 
 // Import commands.js using ES2015 syntax:
 //this will add axe command on our cy object
+import '@testing-library/cypress/add-commands'
 import 'cypress-axe'
 import './commands'
 import './device-plan-selection/device-plan-selection';
