@@ -4,7 +4,8 @@
 // will helpful trick to skip beforeach for some tests
 describe("visit catalog browsing", function () {
   //it will run only once.
-  //here we filterted samsung which will be applicable to all test cases
+  //here we filterted samsung which will be applicable
+  // to all test cases
   before(() => {
     cy.visit("https://www.optus.com.au/mobile/phones");
     cy.get('div[data-component="DeviceListing"]>div>div>div')

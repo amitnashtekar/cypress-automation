@@ -5,7 +5,8 @@ const getText = (el) => {
   return el.textContent;
 };
 describe("visit mobile/phones page", function () {
-  //we loaded our JSON file from fixture and stored in context object
+  //we loaded our JSON file from fixture and stored in
+  // context object
   before(() => {
     cy.visit("https://www.optus.com.au/mobile/phones");
 

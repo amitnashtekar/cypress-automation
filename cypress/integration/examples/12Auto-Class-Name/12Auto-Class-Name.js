@@ -30,13 +30,16 @@ function () {
 
     it("check for search button", () => {
       cy.viewport(375, 812).then(() => {
-        cy.get('header[data-testid="header"] button').eq(1).contains("Search");
+       // cy.get('header[data-testid="header"] button').eq(1).contains("Search");       
+       cy.findByRole('button', { name: /Search/i }).should('exist')
+       
       });
     });
     //they have removed the filter so test is failing
     it("check all filters are appearing", () => {
       cy.viewport(375, 812);
-      cy.get('div[data-component="DeviceListing"] .filter-text').click()
+      //cy.get('div[data-component="DeviceListing"] .filter-text').click()
+      cy.findByText(/Filter/i).click();
       cy.get('div#lightbox li').each(
         (filter, ind) => {
           expect(filter.find("label").text()).equal(this.config[String(ind)]);

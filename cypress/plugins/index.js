@@ -31,6 +31,23 @@ module.exports = (on, config) => {
         return null
       }
     })
+
+
+
+    /////u can change the folder strcure or override the settings here
+    
+      // const islocalDev = config.islocalDev
+      // if (//some condition) {
+      //   config.baseUrl = islocalDev ? 'http://localhost:3000' : 'http://localhost:8811'
+      // }
+      // //change folder strucyure
+      // Object.assign(config, {
+      //   integrationFolder: 'cypress/e2e',
+      //   ignoreTestFiles: '**/*.+(exercise|final|extra-)*.js',
+      // })
+    
+      // return config
+    
   
   
 }

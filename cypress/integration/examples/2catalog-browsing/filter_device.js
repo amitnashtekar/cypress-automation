@@ -16,12 +16,10 @@ describe("catalog browsing filters for mobile phones", function () {
     cy.get('div[data-component="DeviceListing"]>div>div>div')
       .children()
       .filter(":visible")
-
       .then((tile) => {
         debugger;
         //here all tiles will be taken in to account
         cy.wrap(tile).get("h4").should("contain.text", "Galaxy S20 5G");
-
         //use if .its-> it extracts the proprty from object.
         cy.wrap(tile)
           .get('div>a[role="link"]')

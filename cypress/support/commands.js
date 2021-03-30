@@ -24,6 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
+import '@testing-library/cypress/add-commands';
 Cypress.on('uncaught:exception', (err, runnable) => {
     // returning false here prevents Cypress from
     // failing the test
@@ -40,6 +41,15 @@ Cypress.Commands.add('selectForCompare', (tileHeading) => {
 
     })
 })
+
+Cypress.Commands.add('hasElement', (e, cb) => {
+    cy.wait(1000);
+    cy.get('body').then(body => {
+      if (body.find(e).length > 0) {
+        cb();
+      }
+    });
+  });
 
 
 
